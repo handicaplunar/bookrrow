@@ -1,0 +1,3 @@
+Luciano Ramalho <luciano at the ramalho.org domain>
+with lots of help from the Brazilian and the International Grok communities
+(special thanks to Fernando Correa for help with packaging)

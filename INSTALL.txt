@@ -1,0 +1,118 @@
+Pre-requisites
+-------------------
+
+These istructions assume a Linux installation with python2.4, easy_install, 
+and setuptools.
+
+
+Kirbi installation
+---------------------
+
+1. Checkout the Kirbi code and move to the directory created::
+
+    luciano@u704:~$ svn co svn://svn.zope.org/repos/main/Sandbox/luciano/kirbi kirbi
+    luciano@u704:~$ cd kirbi/
+
+2. Invoke the bootstrap script with python2.4::
+
+    luciano@u704:~/kirbi$ python2.4 bootstrap/bootstrap.py
+
+Some files will be downloaded and installed.
+
+3. Invoke the buildout script created by the bootstrap::
+
+    luciano@u704: ~/kirbi$ bin/buildout 
+
+Lots of files will be downloaded and installed.
+
+4. Start the Zope 3 server::
+
+    luciano@u704:~/kirbi$ bin/zopectl start
+
+5. Open a Web browser and point it at::
+
+    http://localhost:8080/
+
+When prompted, enter username grok, password grok.
+At the Grok admin interface, create a Kirbi instance called kirbi
+(that name is hardcoded into the fetch.py script we will run shortly).
+
+
+Kirbifetch installation
+---------------------------
+
+Currently Kirbifetch is not configured to use the same Python libs as
+Kirbi, so we need to install several components by hand, some of which
+Kirbi already downloaded and installed, but not where the system python 
+expects to find them. Sorry about that...
+
+1. Install zope.interface (Twisted requires it)::
+
+    luciano@u704:~/kirbi$ sudo su -
+    root@u704:~# easy_install zope.interface
+
+2. Install zope.schema and ElementTree (fetch.py require them; if lxml is
+   already installed you can skip the ElementTree bit; fetch tries to use
+   lxml before falling back on ElementTree)::
+
+    root@u704:~# easy_install zope.schema
+    root@u704:~# easy_install elementtree
+
+3. Download and install Twisted::
+
+    root@u704:~# http://tmrc.mit.edu/mirror/twisted/Twisted/2.5/Twisted-2.5.0.tar.bz2
+    root@u704:~# bunzip2 Twisted-2.5.0.tar.bz2 
+    root@u704:~# tar xvf Twisted-2.5.0.tar 
+    root@u704:~# cd Twisted-2.5.0
+    root@u704:~/Twisted-2.5.0# python2.4 setup.py install
+
+Twisted will be built and installed. 
+
+
+Running Kirbifetch
+------------------------
+
+Now the fetch.py script can be invoked. Note that fetch.py runs it's own 
+Twisted reactor, so it's a long running script::
+
+    luciano@u704:~/kirbi$ cd kirbifetch/src/kirbifetch
+    luciano@u704:~/kirbi/kirbifetch/src/kirbifetch$ fetch.py
+
+Note that fetch.py must be invoked from the directory where it resides,
+because of the way the path to the cover image diretctories coded in the
+``Fetch.downloadedItemsPage`` method.
+
+
+Trying out Kirbi and Kirbifetch
+-----------------------------------
+
+1. Go to::
+
+    http://localhost:8080/kirbi
+
+2. Click on the "catalog" menu.
+
+3. Click on the "Add Several Books" link. 
+
+4. Enter one or more ISBN numbers.
+
+5. Click on the "catalog" menu again. The books should appear. 
+
+
+What if some book data is missing?
+-----------------------------------
+
+If the main catalog lists only the ISBN instead of the title, Kirbifetch 
+has not yet retrieved the data. Wait a few more seconds and reload. If 
+still no results, click on the "incomplete" menu. The ISBNs should be 
+listed there.
+
+If there are ISBNs listed under "New Book Records Without Title" and 
+they remain there fore several seconds, then Kirbifetch is not working.
+
+If there are ISBNs listed under "Pending Book Searches", then Kirbifetch
+is working, but could not find data about those books at Amazon.com. 
+You can click on the links to several online catalogs to search for that 
+ISBN manually.
+
+
