@@ -1,0 +1,68 @@
+<html metal:use-macro="context/@@master/macros/page">
+<head>
+    <title metal:fill-slot="title">
+        Public Catalog
+    </title>
+
+</head>
+<body>
+  <span metal:fill-slot="content_title">Collective catalog</span>
+  <div metal:fill-slot="content">
+
+    <h3 tal:content="view/results_title">999 items matched the query</h3>
+    <table class="listing" tal:condition="view/results">
+        <tr>
+            <th></th> <th></th> <th></th> 
+            <tal:auth condition="not:anonymous">
+                <th>owned<br />by</th>
+                <th>my<br />collection</th>
+            </tal:auth>
+        </tr>
+        <tr tal:repeat="manif view/results"
+            tal:attributes="class python:repeat['manif'].odd() and 'odd' or 'even'">
+            <th align="right" tal:content="repeat/manif/number" />
+            <td align="center">
+                <img class="cover"
+                     tal:attributes="src python:view.coverUrl(manif)"
+                     height="53" />
+            </td>
+            <td>
+                <dl>
+                    <dt><a tal:attributes="href python:view.url(manif)"
+                        tal:content="manif/filing_title">title goes here</a>
+                    </dt>
+                    <dd tal:content="manif/creatorsLine">
+                    </dd>
+                </dl>
+            </td>
+            <tal:auth condition="not:anonymous">
+                <td>
+                    <tal:owner repeat="item manif/getItems">
+                        <a tal:attributes="href
+                            string:${view/application_url}/u/${item/owner}/${item/item_id}"
+                            tal:content="item/owner" />
+                    </tal:owner>
+                </td>
+                <td align="center" tal:define="ownedItem python:manif.itemOwnedBy(request.principal.id)">
+                    <a tal:attributes="name manif/__name__">
+                    <form tal:condition="not:ownedItem"
+                        method="post" tal:attributes="action
+                        string:${view/application_url}/u/${request/principal/id}/addfrompac">
+                        <input type="hidden" name="manifestation_id"
+                            tal:attributes="value manif/__name__">
+                        <input type="hidden" name="camefrom"
+                            tal:attributes="value string:${view/url}#${manif/__name__}">
+                        <input type="submit" value="add" title="add to my collection" >
+                    </form>
+                    <a tal:condition="ownedItem" tal:attributes="href 
+                            string:${view/application_url}/u/${request/principal/id}/$ownedItem"
+                            >view</a>
+                    </a>
+                </td>
+            </tal:auth>
+        </tr>
+    </table>
+
+  </div>
+</body>
+</html>

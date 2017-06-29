@@ -1,0 +1,68 @@
+If there are no covers available, a placeholder should be retrieved instead::
+
+    >>> import os, os.path
+    >>> from kirbi.book import Book
+    >>> from kirbi.app import Kirbi
+    >>> from kirbi.collection import Collection
+    >>> from kirbi.item import Item
+    >>> import kirbi
+    >>> from zope.publisher.browser import TestRequest
+    >>> from zope.component import getMultiAdapter
+    >>> from zope.app.component.hooks import setSite
+
+    >>> root = getRootFolder()
+    >>> app = root['kirbi'] = Kirbi()
+    >>> setSite(app)
+    >>> pac = app['pac']
+    >>> collection = Collection('123')
+    >>> request = TestRequest()
+    >>> cover_dir = os.path.join(os.path.dirname(kirbi.__file__),
+    ...                          'static', 'covers')
+    >>> pac.addBook(Book(title='NoSuchBook'))
+    u'b1'
+    >>> book = pac['b1']
+    >>> item = Item(book.__name__, '')
+    >>> pac_index = getMultiAdapter((pac, request), name='index')
+    >>> book_index = getMultiAdapter((book, request), name='index')
+    >>> col_index = getMultiAdapter((collection, request), name='index')
+
+    >>> print pac_index.coverUrl(book)
+    http://.../@@/kirbi/covers/small-placeholder.jpg
+    >>> print book_index.coverUrl()
+    http://.../@@/kirbi/covers/small-placeholder.jpg
+    >>> print col_index.coverUrl(item)
+    http://.../@@/kirbi/covers/small-placeholder.jpg
+
+Available covers should be retrieved, for extensions in .gif, .jpg or .png::
+
+    >>> cover_prefix = os.path.join(cover_dir, 'large', book.__name__)
+    >>> file(cover_prefix + '.gif', 'w').close()
+    >>> print pac_index.coverUrl(book)
+    http://.../@@/kirbi/covers/large/b1.gif
+    >>> book_index = getMultiAdapter((book, request), name='index')
+    >>> print book_index.coverUrl()
+    http://.../@@/kirbi/covers/large/b1.gif
+    >>> print col_index.coverUrl(item)
+    http://.../@@/kirbi/covers/large/b1.gif
+    >>> os.unlink(cover_prefix + '.gif')
+
+
+    >>> file(cover_prefix + '.jpg', 'w').close()
+    >>> print pac_index.coverUrl(book)
+    http://.../@@/kirbi/covers/large/b1.jpg
+    >>> book_index = getMultiAdapter((book, request), name='index')
+    >>> print book_index.coverUrl()
+    http://.../@@/kirbi/covers/large/b1.jpg
+    >>> print col_index.coverUrl(item)
+    http://.../@@/kirbi/covers/large/b1.jpg
+    >>> os.unlink(cover_prefix + '.jpg')
+
+    >>> file(cover_prefix + '.png', 'w').close()
+    >>> print pac_index.coverUrl(book)
+    http://.../@@/kirbi/covers/large/b1.png
+    >>> book_index = getMultiAdapter((book, request), name='index')
+    >>> print book_index.coverUrl()
+    http://.../@@/kirbi/covers/large/b1.png
+    >>> print col_index.coverUrl(item)
+    http://.../@@/kirbi/covers/large/b1.png
+    >>> os.unlink(cover_prefix + '.png')

@@ -1,0 +1,86 @@
+<html metal:use-macro="context/@@master/macros/page">
+<head>
+    <title metal:fill-slot="title">
+        Book detail: <span tal:replace="view/main_title" />
+    </title>
+</head>
+<body>
+  <span metal:fill-slot="content_title">Book details</span>      
+
+  <div metal:fill-slot="content">
+
+    <div class="details">
+    <img class="cover" tal:attributes="src view/coverUrl">
+
+    <h1 tal:condition="view/main_title"
+        tal:content="view/main_title">Main Title</h1>
+    <h1 tal:condition="not:view/main_title"
+        class="unknown">(title not available)</h1>
+    <h2 tal:content="view/sub_title">sub-title</h2>
+
+    <table>
+        <tr><th>Creators</th>
+            <td>
+                <tal:creator repeat="creator context/creatorsListDict">
+                    <tal:comment replace="nothing">Next few lines have weird
+                        indentation because of the need to control the spaces
+                        between names and the comma</tal:comment>
+                    <a tal:attributes="href
+                       string:${view/creator_search_url}${creator/name}"
+                       tal:content="creator/name">
+                    Joe Doe</a><tal:role condition="creator/role">
+                    (<span tal:replace="creator/role" />)</tal:role><tal:comma
+                       condition="not:repeat/creator/end">, </tal:comma>
+                </tal:creator>
+            </td>
+        </tr>
+        <tr><th>ISBN-13</th>
+            <td tal:content="view/isbn13">9780123456789</td>
+        </tr>
+        <tr><th>Edition</th>
+            <td tal:content="context/edition">2nd</td>
+        </tr>
+        <tr><th>Publisher</th>
+            <td tal:content="context/publisher">Sample Publishing Co.</td>
+        </tr>
+        <tr><th>Issued</th>
+            <td tal:content="context/issued">2006-12-31</td>
+        </tr>
+        <tr><th>Language</th>
+            <td tal:content="context/language">pt</td>
+        </tr>
+        <tr><th>Subjects</th>
+            <td tal:content="view/subjects">subject1, subject2</td>
+        </tr>
+        <tr><th>Source</th>
+            <td tal:condition="view/source_url">
+                <a tal:attributes="href view/source_url"
+                    tal:content="view/source" />
+            </td>
+            <td tal:condition="not:view/source_url">
+                <span tal:replace="view/source" />
+            </td>
+        </tr>
+    </table>
+
+    </div><!-- /details -->
+    
+    <div class="book_owners">
+        <h3>People who own this book</h3>
+        <tal:owner repeat="item context/getItems">
+            <a tal:attributes="href
+                string:${view/application_url}/u/${item/owner}/${item/item_id}/borrow"
+                tal:content="item/owner" />&nbsp;&nbsp;
+        </tal:owner>    
+        <p>(click on a name to borrow it from that person)</p>
+    </div>
+
+    <!-- XXX: only the site manager should be able to edit a book 
+    <form class="search" tal:attributes="action python:view.url('edit')">
+        <input type="submit" name="submit" value="edit">
+    </form>
+    -->
+
+  </div><!-- /content -->
+  </body>
+</html>

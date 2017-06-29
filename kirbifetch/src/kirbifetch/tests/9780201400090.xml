@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2005-10-05">
+    <OperationRequest>
+        <HTTPHeaders>
+        <Header Name="UserAgent" Value="Python-httplib2/$Rev: 235 $">
+        </Header>
+        </HTTPHeaders>
+        <RequestId>170SE9G2EQFGXEP247H5</RequestId>
+        <Arguments>
+        <Argument Name="SearchIndex" Value="Books">
+        </Argument>
+        <Argument Name="AssociateTag" Value="circulante-20">
+        </Argument>
+        <Argument Name="Service" Value="AWSECommerceService">
+        </Argument>
+        <Argument Name="ResponseGroup" Value="ItemAttributes">
+        </Argument>
+        <Argument Name="Operation" Value="ItemSearch">
+        </Argument>
+        <Argument Name="Power" Value="isbn:9780201400090">
+        </Argument>
+        <Argument Name="AWSAccessKeyId" Value="13W2MMDG65QJJK9GG402">
+        </Argument>
+        </Arguments>
+        <RequestProcessingTime>0.0636920928955078</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>True</IsValid>
+            <ItemSearchRequest>
+            <Power>isbn:9780201400090</Power>
+            <ResponseGroup>ItemAttributes</ResponseGroup>
+            <SearchIndex>Books</SearchIndex>
+            </ItemSearchRequest>
+        </Request>
+        <TotalResults>1</TotalResults>
+        <TotalPages>1</TotalPages>
+        <Item>
+            <ASIN>020140009X</ASIN>
+            <DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=020140009X%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/020140009X%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL>
+            <ItemAttributes>
+                <Author>Robert Sedgewick</Author>
+                <Author>Philippe Flajolet</Author>
+                <Binding>Paperback</Binding>
+                <Brand>Addison-Wesley Professional</Brand>
+                <DeweyDecimalNumber>005.1</DeweyDecimalNumber>
+                <EAN>9780201400090</EAN>
+                <Edition>1st</Edition>
+                <ISBN>020140009X</ISBN>
+                <Label>Addison-Wesley Professional</Label>
+                <ListPrice>
+                    <Amount>6299</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$62.99</FormattedPrice>
+                </ListPrice>
+                <Manufacturer>Addison-Wesley Professional</Manufacturer>
+                <NumberOfItems>1</NumberOfItems>
+                <NumberOfPages>512</NumberOfPages>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">120</Height>
+                    <Length Units="hundredths-inches">890</Length>
+                    <Weight Units="hundredths-pounds">150</Weight>
+                    <Width Units="hundredths-inches">570</Width>
+                </PackageDimensions>
+                <ProductGroup>Book</ProductGroup>
+                <PublicationDate>1995-11-30</PublicationDate>
+                <Publisher>Addison-Wesley Professional</Publisher>
+                <Studio>Addison-Wesley Professional</Studio>
+                <Title>An Introduction to the Analysis of Algorithms</Title>
+                <UPC>785342400090</UPC>
+            </ItemAttributes>
+        </Item>
+    </Items>
+</ItemSearchResponse>

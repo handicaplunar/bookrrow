@@ -1,0 +1,54 @@
+======================
+Testing XML-RPC access
+======================
+
+First we setup the app and XML-RPC proxy to the PAC (the public access
+book catalog)::
+
+    >>> from zope.app.testing.xmlrpc import ServerProxy
+    >>> from kirbi.app import Kirbi
+    >>> root = getRootFolder()
+    >>> root['kirbi'] = Kirbi()
+    >>> pac = ServerProxy("http://localhost/kirbi/pac")
+
+Now we use the proxy to add books to the PAC::
+
+    >>> pac.add(dict(title="One Flew Over the Cuckoo's Nest"))
+    'b1'
+    >>> pac.add(dict(isbn13='9780684833392'))
+    '9780684833392'
+    >>> pac.add(dict(isbn13='9780486273471'))
+    '9780486273471'
+    >>> pac.add(dict(title=u'Utopia', isbn13='9780140449105'))
+    '9780140449105'
+    >>> sorted(pac.list())
+    ['9780140449105', '9780486273471', '9780684833392', 'b1']
+
+The second and third books added have ISBN but no title, so they are added to
+the incomplete attribute of the PAC, to be retrieved by Kirbifetch::
+
+    >>> sorted(pac.dumpIncomplete())
+    ['9780486273471', '9780684833392']
+
+Once retrieved, they are moved from the incomplete to the pending attribute
+of the PAC::
+
+    >>> pac.dumpIncomplete()
+    []
+
+When the metadata is found at an external source, the book record can be
+updated (the number of books updated is returned)::
+
+    >>> metadata = [dict(isbn13='9780684833392',title=u'Catch-22',creators=[u'Joseph Heller'])]
+    >>> pac.updateBooks(metadata)
+    1
+
+But only pending books may be updated by this API::
+
+    >>> metadata = [dict(title=u'Utopia', isbn13='9780140449105')]
+    >>> pac.updateBooks(metadata)
+    Traceback (most recent call last):
+      ...
+    Fault: <Fault -1: 'Unexpected Zope exception: LookupError: 9780140449105
+    not in pending ISBNs; update not allowed.'>
+

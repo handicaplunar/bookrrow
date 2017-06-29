@@ -1,0 +1,57 @@
+=====================================
+User management and authentication
+=====================================
+
+Users can be adapted to ``IPrincipalInfo``::
+
+    >>> from kirbi.user import User, UserFolder
+    >>> from kirbi.interfaces import IUser
+    >>> from zope.app.authentication.interfaces import IPrincipalInfo
+    >>> alice = User(u'alice', u'Vincent Damon Furnier', u'1234')
+    >>> IUser.providedBy(alice)
+    True
+    >>> IPrincipalInfo.providedBy(alice)
+    False
+    >>> principal = IPrincipalInfo(alice)
+    >>> IPrincipalInfo.providedBy(principal)
+    True
+    >>> principal.description
+    u'Vincent Damon Furnier (alice)'
+    >>> principal.title = u'Alice Cooper'
+    >>> alice.name
+    u'Alice Cooper'
+    
+``UserFolder`` instances provide ``IAuthenticatorPlugin`` so they can be used
+to authenticate users. 
+
+    >>> userFolder = UserFolder()
+    >>> from zope.app.authentication.interfaces import IAuthenticatorPlugin
+    >>> IAuthenticatorPlugin.providedBy(userFolder)
+    True
+    
+Now we put the ``alice`` user created before in the ``userFolder``, and
+exercise the ``IAuthenticatorPlugin`` methods::
+    
+    >>> userFolder[u'alice'] = alice
+    >>> principal = userFolder.principalInfo(u'alice')
+    >>> principal.description
+    u'Alice Cooper (alice)'
+    
+    >>> userFolder.principalInfo('nonexistent-user') is None
+    True
+    
+    >>> good_credentials = {'login':u'alice','password':u'1234'}
+    >>> bad_login_cred = {'login':u'bob','password':u'1234'}
+    >>> bad_passwd_cred = {'login':u'alice','password':u'9999'}
+    >>> principal = userFolder.authenticateCredentials(good_credentials)
+    >>> principal.description
+    u'Alice Cooper (alice)'
+
+    >>> userFolder.authenticateCredentials(bad_login_cred) is None
+    True
+    >>> userFolder.authenticateCredentials(bad_passwd_cred) is None
+    True
+    
+    
+
+

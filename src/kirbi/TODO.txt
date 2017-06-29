@@ -1,0 +1,16 @@
+This is a list of bugs to fix and improvements to make in Kirbi. Improvements
+listed here are mostly technical: refactorings, optimizations etc. There is
+a list of planned features in README.txt and new ideas should be put there.
+
+* move cover images into ZODB (perhaps using blob support)
+
+* make kirbi startup start kirbifetch as well
+
+* Refactor kirbifetch to allow pluggable metadata sources, instead of
+  relying on Amazon.com exclusively
+
+* Increase test coverage
+
+* Packaging (buildout, eggification)
+
+* AJAXification using same framework used for Grok Admin UI

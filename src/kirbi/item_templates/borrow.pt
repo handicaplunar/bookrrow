@@ -1,0 +1,81 @@
+<html metal:use-macro="context/@@master/macros/page">
+<body>
+
+    <span metal:fill-slot="content_title"
+        tal:content="view/form_title|string:Form"></span>
+    
+    <div metal:fill-slot="content">
+    
+        <form class="edit-form" enctype="multipart/form-data" method="post"
+            action="." tal:attributes="action request/URL">
+                        
+        <div class="row">
+          <div class="label">
+            <label>From</label>
+          </div>
+        
+          <div class="field">
+              <span tal:replace="view/borrow_from" /><br />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">
+            <label>Item</label>
+          </div>
+        
+          <div class="field">
+
+            <table><tr>
+                <td align="center">
+                    <img class="cover"
+                         tal:attributes="src python:view.coverUrl()"
+                         height="53" />
+                </td>
+                <td>
+                    <dl>
+                        <dt><a tal:attributes="href python:view.url(view.context)"
+                            tal:content="view/context/filing_title">title goes here</a>
+                        </dt>
+                        <dd tal:content="view/context/creatorsLine">
+                        </dd>
+                    </dl>
+                </td>
+            </tr></table>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">
+            <label>Duration</label>
+          </div>
+        
+          <div class="field">
+              <tal:loop repeat="duration view/getDurations">
+                  <input type="radio" name="duration" tal:attributes="value duration" />
+                  1 <span tal:replace="duration" /><br />
+              </tal:loop>    
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="label">
+            <label>Pick-up</label>
+          </div>
+        
+          <div class="field">
+              Use this field to propose a place and time to pick-up the item
+              <textarea cols="50" rows="3" name="pickup"></textarea>    
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">&nbsp;</div>
+          <div class="field">
+             <input type="submit" value="send request">
+          </div>
+        </div>    
+        </form>
+    </div>
+</body>
+</html>

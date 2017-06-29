@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2005-10-05">
+	<OperationRequest>
+		<HTTPHeaders>
+			<Header Name="UserAgent" Value="Python-httplib2/$Rev: 235 $"></Header>
+		</HTTPHeaders>
+		<RequestId>0NV290TFMXVW0Y09CXTA</RequestId>
+		<Arguments>
+			<Argument Name="AssociateTag" Value="circulante-20"></Argument>
+			<Argument Name="ItemId" Value="1231231239"></Argument>
+			<Argument Name="Service" Value="AWSECommerceService"></Argument>
+			<Argument Name="ResponseGroup" Value="ItemAttributes"></Argument>
+			<Argument Name="Operation" Value="ItemLookup"></Argument>
+			<Argument Name="AWSAccessKeyId" Value="13W2MMDG65QJJK9GG402"></Argument>
+		</Arguments>
+		<RequestProcessingTime>0.0118951797485352</RequestProcessingTime>
+	</OperationRequest>
+	<Items>
+		<Request>
+			<IsValid>True</IsValid>
+			<ItemLookupRequest>
+				<ItemId>1231231239</ItemId>
+				<ResponseGroup>ItemAttributes</ResponseGroup>
+			</ItemLookupRequest>
+			<Errors>
+				<Error>
+					<Code>AWS.InvalidParameterValue</Code>
+					<Message>1231231239 is not a valid value for ItemId. Please change this value and retry your request.</Message>
+				</Error>
+			</Errors>
+		</Request>
+	</Items>
+</ItemLookupResponse>

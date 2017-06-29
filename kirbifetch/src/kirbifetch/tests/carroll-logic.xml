@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2005-10-05">
+    <OperationRequest>
+        <HTTPHeaders>
+            <Header Name="UserAgent" Value="Python-httplib2/$Rev: 235 $"></Header>
+        </HTTPHeaders>
+        <RequestId>05VS0MD1ZA1H8HN5E139</RequestId>
+        <Arguments>
+            <Argument Name="SearchIndex" Value="Books"></Argument>
+            <Argument Name="AssociateTag" Value="circulante-20"></Argument>
+            <Argument Name="Service" Value="AWSECommerceService"></Argument>
+            <Argument Name="ResponseGroup" Value="ItemAttributes"></Argument>
+            <Argument Name="Operation" Value="ItemSearch"></Argument>
+            <Argument Name="Power" Value="author:lewis carroll and title:logic"></Argument>
+            <Argument Name="AWSAccessKeyId" Value="13W2MMDG65QJJK9GG402"></Argument>
+        </Arguments>
+        <RequestProcessingTime>0.129734039306641</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>True</IsValid>
+            <ItemSearchRequest>
+                <Power>author:lewis carroll and title:logic</Power>
+                <ResponseGroup>ItemAttributes</ResponseGroup>
+                <SearchIndex>Books</SearchIndex>
+            </ItemSearchRequest>
+        </Request>
+        <TotalResults>21</TotalResults>
+        <TotalPages>3</TotalPages>
+        <Item>
+            <ASIN>0486204928</ASIN>
+            <DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=0486204928%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0486204928%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL>
+            <ItemAttributes>
+                <Author>Lewis Carroll</Author>
+                <Binding>Paperback</Binding>
+                <DeweyDecimalNumber>793.74</DeweyDecimalNumber>
+                <EAN>9780486204925</EAN>
+                <Edition>New Issue</Edition>
+                <ISBN>0486204928</ISBN>
+                <Label>Dover Publications</Label>
+                <ListPrice>
+                    <Amount>1195</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$11.95</FormattedPrice>
+                </ListPrice>
+                <Manufacturer>Dover Publications</Manufacturer>
+                <NumberOfItems>1</NumberOfItems>
+                <NumberOfPages>352</NumberOfPages>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">70</Height>
+                    <Length Units="hundredths-inches">780</Length>
+                    <Weight Units="hundredths-pounds">70</Weight>
+                    <Width Units="hundredths-inches">540</Width>
+                </PackageDimensions>
+                <ProductGroup>Book</ProductGroup>
+                <PublicationDate>1958-06-01</PublicationDate>
+                <Publisher>Dover Publications</Publisher>
+                <Studio>Dover Publications</Studio>
+                <Title>Symbolic Logic and the Game of Logic</Title>
+            </ItemAttributes>
+        </Item>
+        <Item>
+            <ASIN>B00088TPJQ</ASIN>
+            <DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=B00088TPJQ%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B00088TPJQ%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL>
+            <ItemAttributes>
+                <Author>Lewis Carroll</Author>
+                <Binding>Unknown Binding</Binding>
+                <Label>Macmillan</Label>
+                <Manufacturer>Macmillan</Manufacturer>
+                <ProductGroup>Book</ProductGroup>
+                <PublicationDate>1896</PublicationDate>
+                <Publisher>Macmillan</Publisher>
+                <Studio>Macmillan</Studio>
+                <Title>A fascinating mental recreation for the young: Symbolic logic</Title>
+            </ItemAttributes>
+        </Item>
+        <Item><ASIN>1406927236</ASIN><DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=1406927236%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/1406927236%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL><ItemAttributes><Author>Lewis Carroll</Author><Binding>Paperback</Binding><EAN>9781406927238</EAN><ISBN>1406927236</ISBN><Label>Hard Press</Label><ListPrice><Amount>995</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$9.95</FormattedPrice></ListPrice><Manufacturer>Hard Press</Manufacturer><NumberOfPages>74</NumberOfPages><PackageDimensions><Height Units="hundredths-inches">400</Height><Length Units="hundredths-inches">900</Length><Weight Units="hundredths-pounds">87</Weight><Width Units="hundredths-inches">600</Width></PackageDimensions><ProductGroup>Book</ProductGroup><PublicationDate>2006-11-09</PublicationDate><Publisher>Hard Press</Publisher><ReleaseDate>2006-11-03</ReleaseDate><Studio>Hard Press</Studio><Title>The Game of Logic</Title></ItemAttributes></Item>
+        <Item><ASIN>0517523833</ASIN><DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=0517523833%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0517523833%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL><ItemAttributes><Author>Lewis Carroll</Author><Author>Charles Lutwidge Dodgson</Author><Binding>Hardcover</Binding><Brand>Clarkson Potter</Brand><Creator Role="Editor">III William Warren Bartley</Creator><DeweyDecimalNumber>511.3</DeweyDecimalNumber><EAN>9780517523834</EAN><ISBN>0517523833</ISBN><Label>Clarkson N. Potter</Label><ListPrice><Amount>1995</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$19.95</FormattedPrice></ListPrice><Manufacturer>Clarkson N. Potter</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>496</NumberOfPages><ProductGroup>Book</ProductGroup><PublicationDate>1977-03-23</PublicationDate><Publisher>Clarkson N. Potter</Publisher><ReleaseDate>1977-03-23</ReleaseDate><Studio>Clarkson N. Potter</Studio><Title>Lewis Carroll's Symbolic Logic</Title></ItemAttributes></Item>
+        <Item><ASIN>B000O037CY</ASIN><DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=B000O037CY%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B000O037CY%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL><ItemAttributes><Author>Lewis Carroll</Author><Binding>Paperback</Binding><Label>Dover Publications, Inc</Label><Manufacturer>Dover Publications, Inc</Manufacturer><ProductGroup>Book</ProductGroup><PublicationDate>1958</PublicationDate><Publisher>Dover Publications, Inc</Publisher><Studio>Dover Publications, Inc</Studio><Title>Mathematical Recreations of Lewis Carroll: Symbolic Logic and The Game of Logic (Both Books Bound as One)</Title></ItemAttributes></Item>
+        <Item><ASIN>B00072J05C</ASIN><DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=B00072J05C%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B00072J05C%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL><ItemAttributes><Author>Lewis Carroll</Author><Binding>Unknown Binding</Binding><Label>Perfection Form Co</Label><Manufacturer>Perfection Form Co</Manufacturer><NumberOfPages>45</NumberOfPages><ProductGroup>Book</ProductGroup><PublicationDate>1972</PublicationDate><Publisher>Perfection Form Co</Publisher><Studio>Perfection Form Co</Studio><Title>Puzzles in logic</Title></ItemAttributes></Item>
+        <Item><ASIN>B00085JEYK</ASIN><DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=B00085JEYK%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B00085JEYK%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL><ItemAttributes><Author>Lewis Carroll</Author><Binding>Unknown Binding</Binding><Edition>2nd ed</Edition><Label>MacMillan</Label><Manufacturer>MacMillan</Manufacturer><NumberOfPages>192</NumberOfPages><ProductGroup>Book</ProductGroup><PublicationDate>1896</PublicationDate><Publisher>MacMillan</Publisher><Studio>MacMillan</Studio><Title>Symbolic logic</Title></ItemAttributes></Item>
+        <Item><ASIN>B0006VUZEO</ASIN><DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=B0006VUZEO%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B0006VUZEO%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL><ItemAttributes><Author>Lewis Carroll</Author><Binding>Unknown Binding</Binding><Label>Dover Publications</Label><Manufacturer>Dover Publications</Manufacturer><NumberOfPages>96</NumberOfPages><ProductGroup>Book</ProductGroup><PublicationDate>1972</PublicationDate><Publisher>Dover Publications</Publisher><Studio>Dover Publications</Studio><Title>Symbolic logic and The game of logic;: Mathematical recreations of Lewis Carroll</Title></ItemAttributes></Item>
+        <Item><ASIN>B000J4NG0S</ASIN><DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=B000J4NG0S%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B000J4NG0S%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL><ItemAttributes><Author>Lewis Carroll</Author><Binding>Paperback</Binding><Label>Dover Publications</Label><Manufacturer>Dover Publications</Manufacturer><ProductGroup>Book</ProductGroup><PublicationDate>1958</PublicationDate><Publisher>Dover Publications</Publisher><Studio>Dover Publications</Studio><Title>Symbolic Logic Game of Logic: Mathematical Recreations of Lewis Carroll 2 Books Bound As 1</Title></ItemAttributes></Item>
+        <Item><ASIN>B000H0075G</ASIN><DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=B000H0075G%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B000H0075G%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL><ItemAttributes><Author>Lewis Carroll</Author><Binding>Paperback</Binding><Label>Berkeley Enterprises</Label><Manufacturer>Berkeley Enterprises</Manufacturer><ProductGroup>Book</ProductGroup><PublicationDate>1955</PublicationDate><Publisher>Berkeley Enterprises</Publisher><Studio>Berkeley Enterprises</Studio><Title>Symbolic Logic, Part 1: Elementary (Fourth Edition)</Title></ItemAttributes></Item>
+    </Items>
+</ItemSearchResponse>

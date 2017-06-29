@@ -1,0 +1,36 @@
+Author	Chris DiBona
+Author	Sam Ockman
+Author	Mark Stone
+Author	Brian Behlendorf
+Author	Scott Bradner
+Author	Jim Hamerly
+Author	Kirk McKusick
+Author	Tim O'Reilly
+Author	Tom Paquin
+Author	Bruce Perens
+Author	Eric Raymond
+Author	Richard Stallman
+Author	Michael Tiemann
+Author	Linus Torvalds
+Author	Paul Vixie
+Author	Larry Wall
+Author	Bob Young
+Binding	Paperback
+Brand	O'Reilly Media
+DeweyDecimalNumber	5.1068
+EAN	9781565925823
+Edition	1
+Format	Illustrated
+ISBN	1565925823
+Label	O'Reilly Media, Inc.
+ListPrice	
+Manufacturer	O'Reilly Media, Inc.
+NumberOfItems	1
+NumberOfPages	280
+PackageDimensions	
+ProductGroup	Book
+PublicationDate	1999-01
+Publisher	O'Reilly Media, Inc.
+Studio	O'Reilly Media, Inc.
+Title	Open Sources: Voices from the Open Source Revolution (O'Reilly Open Source)
+UPC	636920925828

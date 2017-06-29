@@ -1,0 +1,27 @@
+============================
+Testing the Book adding form
+============================
+
+First we setup the app and our test browser, navigating to the book adding
+form::
+
+    >>> from kirbi.app import Kirbi
+    >>> root = getRootFolder()
+    >>> root['kirbi'] = Kirbi()
+    >>> pac = root['kirbi']['pac']
+    >>> browser = Browser()
+    >>> browser.addHeader('Authorization', 'Basic mgr:mgrpw')
+    >>> browser.handleErrors = False
+    >>> browser.open('http://localhost/kirbi/pac/addbook')                 
+
+Now we add a book through this form::
+
+    >>> browser.getControl('Title').value = "One Flew Over the Cuckoo's Nest"
+    >>> browser.getControl('Save book').click()
+
+And we can see the book has 'source' set to the user who originated this book,
+since the details were manually entered::
+
+    >>> book, = pac.values()
+    >>> print book.source
+    zope.mgr

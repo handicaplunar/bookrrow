@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2005-10-05">
+    <OperationRequest>
+        <HTTPHeaders>
+            <Header Name="UserAgent" Value="Python-httplib2/$Rev: 235 $">
+            </Header>
+        </HTTPHeaders>
+        <RequestId>0PYH9BW59Z7J0F9KHGC4</RequestId>
+        <Arguments>
+            <Argument Name="SearchIndex" Value="Books">
+            </Argument>
+            <Argument Name="AssociateTag" Value="circulante-20">
+            </Argument>
+            <Argument Name="Service" Value="AWSECommerceService">
+            </Argument>
+            <Argument Name="ResponseGroup" Value="ItemAttributes">
+            </Argument>
+            <Argument Name="Operation" Value="ItemSearch">
+            </Argument>
+            <Argument Name="Power" Value="isbn:9780471195726">
+            </Argument>
+            <Argument Name="AWSAccessKeyId" Value="13W2MMDG65QJJK9GG402">
+            </Argument>
+        </Arguments>
+        <RequestProcessingTime>0.0650789737701416</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>True</IsValid>
+            <ItemSearchRequest>
+            <Power>isbn:9780471195726</Power>
+            <ResponseGroup>ItemAttributes</ResponseGroup>
+            <SearchIndex>Books</SearchIndex>
+            </ItemSearchRequest>
+        </Request>
+        <TotalResults>1</TotalResults>
+        <TotalPages>1</TotalPages>
+        <Item>
+            <ASIN>0471195723</ASIN>
+            <DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=0471195723%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0471195723%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL>
+            <ItemAttributes>
+            <Author>Peter Sapaty</Author>
+            <Binding>Hardcover</Binding>
+            <Brand>Wiley-Interscience</Brand>
+            <DeweyDecimalNumber>004.36</DeweyDecimalNumber>
+            <EAN>9780471195726</EAN>
+            <ISBN>0471195723</ISBN>
+            <Label>Wiley-Interscience</Label>
+            <ListPrice>
+                <Amount>13395</Amount>
+                <CurrencyCode>USD</CurrencyCode>
+                <FormattedPrice>$133.95</FormattedPrice>
+            </ListPrice>
+            <Manufacturer>Wiley-Interscience</Manufacturer>
+            <NumberOfItems>1</NumberOfItems>
+            <NumberOfPages>432</NumberOfPages>
+            <PackageDimensions>
+                <Height Units="hundredths-inches">98</Height>
+                <Length Units="hundredths-inches">961</Length>
+                <Weight Units="hundredths-pounds">169</Weight>
+                <Width Units="hundredths-inches">634</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <PublicationDate>1999-02-22</PublicationDate>
+            <Publisher>Wiley-Interscience</Publisher>
+            <Studio>Wiley-Interscience</Studio>
+            <Title>Mobile Processing in Distributed and Open Environments (Wiley Series on Parallel and Distributed Computing)</Title>
+            </ItemAttributes>
+        </Item>
+    </Items>
+</ItemSearchResponse>

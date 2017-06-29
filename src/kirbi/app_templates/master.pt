@@ -1,0 +1,90 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:define-macro="page">
+<head>
+  <title metal:define-slot="title">
+    Kirbi
+  </title>
+  <link rel="stylesheet" type="text/css"
+        tal:attributes="href static/master.css" />
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+        tal:attributes="href static/favicon.ico" />
+
+  <script metal:define-slot="setfocus" type="text/javascript">
+        /* XXX: should set focus to first field in form,
+           regardless of field name (see login.pt) */
+        function setfocus() { document.forms[0].query.focus() }
+  </script>
+
+  <metal:hdr define-slot="headers">
+    <!-- Additional headers here... -->
+  </metal:hdr>
+
+</head>
+<body onload=setfocus()
+    tal:define="IUnauthenticatedPrincipal python:modules['zope.app.security.interfaces'].IUnauthenticatedPrincipal;
+                anonymous python:IUnauthenticatedPrincipal.providedBy(request.principal)">
+
+  <div class="top">
+    <a tal:attributes="href python:view.application_url()">
+        <img tal:attributes="src static/circulante-logo-transp-212x51.png"
+        title="Circulante.org" width="212" height="51" />
+    </a>
+    <ul class="menu">
+      <tal:anon condition="anonymous">
+        <li><a tal:attributes="href python:view.application_url('join')">join</a></li>
+      </tal:anon>
+      <tal:auth condition="not:anonymous">
+        <li><a tal:attributes="href string:${view/application_url}/u/${request/principal/id}"
+           ><span tal:replace="request/principal/id" />'s collection</a></li>
+      </tal:auth>
+      <li><a tal:attributes="href python:view.application_url('pac')">collective catalog</a></li>
+      <li class="noborder"><form tal:attributes="action python:view.application_url('pac')"
+          ><input type="text" name="query">&nbsp;<input type="submit" name="submit" value="search"
+          ></form></li>    
+    </ul>
+  </div>
+  <div metal:define-slot="body">
+    <div class="content_menu">
+      <div metal:define-slot="content_menu">
+        <span class="content_title">
+            <span metal:define-slot="content_title">
+            Content title
+            </span>
+        </span>
+        <span class="content_login">
+           <span tal:condition="not:anonymous">
+              login: <span tal:replace="view/request/principal/id" />
+           </span>
+        </span>
+        <span class="user_menu">
+            <span metal:define-slot="user_menu">
+           <ul class="menu">
+              <li tal:condition="anonymous" class="noborder"><form 
+                  tal:attributes="action string:${view/application_url}/login"
+              method="post">login&nbsp;<input
+                    type="text" name="login" id="login" tal:attributes="value
+                    request/login|nothing"/>&nbsp;&nbsp;password&nbsp;<input type="password"
+                    name="password" id="password" />&nbsp;<input type="submit"
+                    name="login_submit" value="log in" /></form></li>
+                <tal:auth condition="not:anonymous">
+                  <li><a tal:attributes="href
+                     string:${view/application_url}/u/${request/principal/id}/addbookitems">add books</a></li>
+                  <li><a tal:attributes="href python:view.application_url('logout')">logout</a></li>
+                </tal:auth>
+            </ul>
+            </span><!--/slot: user_menu-->
+        </span>
+        
+      </div>
+    </div>
+    <div class="error_msg" tal:condition="exists:request/error_msg"
+       tal:content="request/error_msg" />
+    <div class="content">
+      <div metal:define-slot="content">
+        Your content here...
+      </div>
+    </div>
+  </div>
+</body>
+</html>

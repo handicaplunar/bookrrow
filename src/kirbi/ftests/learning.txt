@@ -1,0 +1,32 @@
+====================================
+Tests for learning Grok and Zope 3
+====================================
+
+These are random tests that I am using to learn about Grok and Zope 3 (LR).
+
+First we setup the app::
+
+    >>> from zope.app.testing.xmlrpc import ServerProxy
+    >>> from zope.app.component.hooks import setSite
+    >>> from kirbi.app import Kirbi
+    >>> root = getRootFolder()
+    >>> setSite(root)
+    >>> kirbi = root['kirbi'] = Kirbi()
+
+A Pac instance is created when Kirbi is initialized::
+
+    >>> pac = kirbi['pac']
+    >>> pac
+    <kirbi.pac.Pac object at ...>
+
+No matter how deep you are, you can always get to the root app::
+
+    >>> import grok
+    >>> obj = pac
+    >>> while obj is not None:
+    ...     if isinstance(obj, grok.Application):
+    ...         break
+    ...     obj = obj.__parent__
+    >>> obj
+    <kirbi.app.Kirbi object at ...>
+

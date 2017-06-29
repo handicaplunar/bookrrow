@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2005-10-05">
+    <OperationRequest>
+        <HTTPHeaders>
+            <Header Name="UserAgent" Value="Python-httplib2/$Rev: 235 $"></Header>
+        </HTTPHeaders>
+        <RequestId>1TNDRF1510DSSJZQRP69</RequestId>
+        <Arguments>
+            <Argument Name="ItemId" Value="1565926226"></Argument>
+            <Argument Name="Service" Value="AWSECommerceService"></Argument>
+            <Argument Name="Operation" Value="ItemLookup"></Argument>
+            <Argument Name="AWSAccessKeyId" Value="13W2MMDG65QJJK9GG402"></Argument>
+        </Arguments>
+        <RequestProcessingTime>0.0254600048065186</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>True</IsValid>
+            <ItemLookupRequest>
+                <ItemId>1565926226</ItemId>
+            </ItemLookupRequest>
+        </Request>
+        <Item>
+            <ASIN>1565926226</ASIN>
+            <DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=1565926226%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/1565926226%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL>
+            <ItemAttributes>
+                <Author>Eric Meyer</Author>
+                <Manufacturer>O'Reilly</Manufacturer>
+                <ProductGroup>Book</ProductGroup>
+                <Title>Cascading Style Sheets: The Definitive Guide</Title>
+            </ItemAttributes>
+        </Item>
+    </Items>
+</ItemLookupResponse>

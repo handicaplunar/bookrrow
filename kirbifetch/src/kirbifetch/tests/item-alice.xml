@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2005-10-05">
+	<OperationRequest>
+		<HTTPHeaders>
+			<Header Name="UserAgent" Value="Python-httplib2/$Rev: 235 $"></Header>
+		</HTTPHeaders>
+		<RequestId>1MTBTZB8ENGD2XG0F35E</RequestId>
+		<Arguments>
+			<Argument Name="AssociateTag" Value="circulante-20"></Argument>
+			<Argument Name="ItemId" Value="0393048470"></Argument>
+			<Argument Name="Service" Value="AWSECommerceService"></Argument>
+			<Argument Name="ResponseGroup" Value="ItemAttributes"></Argument>
+			<Argument Name="Operation" Value="ItemLookup"></Argument>
+			<Argument Name="AWSAccessKeyId" Value="13W2MMDG65QJJK9GG402"></Argument>
+		</Arguments>
+		<RequestProcessingTime>0.0305209159851074</RequestProcessingTime>
+	</OperationRequest>
+	<Items>
+		<Request>
+			<IsValid>True</IsValid>
+			<ItemLookupRequest>
+				<ItemId>0393048470</ItemId>
+				<ResponseGroup>ItemAttributes</ResponseGroup>
+			</ItemLookupRequest>
+		</Request>
+		<Item>
+			<ASIN>0393048470</ASIN>
+			<DetailPageURL>http://www.amazon.com/gp/redirect.html%3FASIN=0393048470%26tag=circulante-20%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0393048470%253FSubscriptionId=13W2MMDG65QJJK9GG402</DetailPageURL>
+			<ItemAttributes>
+				<Author>Lewis Carroll</Author>
+				<Binding>Hardcover</Binding>
+				<Brand>W.W. Norton &amp; Company</Brand>
+				<Creator Role="Editor">Martin Gardner</Creator>
+				<Creator Role="Illustrator">John Tenniel</Creator>
+				<DeweyDecimalNumber>823.8</DeweyDecimalNumber>
+				<EAN>9780393048476</EAN>
+				<Edition>Upd Sub</Edition>
+				<ISBN>0393048470</ISBN>
+				<Label>W. W. Norton &amp; Company</Label>
+				<ListPrice>
+				<Amount>2995</Amount>
+				<CurrencyCode>USD</CurrencyCode>
+				<FormattedPrice>$29.95</FormattedPrice>
+				</ListPrice>
+				<Manufacturer>W. W. Norton &amp; Company</Manufacturer>
+				<NumberOfItems>1</NumberOfItems>
+				<NumberOfPages>312</NumberOfPages>
+				<PackageDimensions>
+				<Height Units="hundredths-inches">112</Height>
+				<Length Units="hundredths-inches">1023</Length>
+				<Weight Units="hundredths-pounds">246</Weight>
+				<Width Units="hundredths-inches">875</Width>
+				</PackageDimensions>
+				<ProductGroup>Book</ProductGroup>
+				<PublicationDate>1999-11</PublicationDate>
+				<Publisher>W. W. Norton &amp; Company</Publisher>
+				<Studio>W. W. Norton &amp; Company</Studio>
+				<Title>The Annotated Alice: The Definitive Edition</Title>
+			</ItemAttributes>
+		</Item>
+	</Items>
+</ItemLookupResponse>

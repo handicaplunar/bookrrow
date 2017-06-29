@@ -1,0 +1,35 @@
+<html metal:use-macro="context/@@master/macros/page">
+<head>
+   <title metal:fill-slot="title">Main</title>
+</head>
+<body>
+  <span metal:fill-slot="content_title">Collective catalog</span>
+
+  <div metal:fill-slot="content">
+
+  <table><tr>
+    <tal:comment replace="nothing">
+    <td width="15%">
+    <form tal:attributes="action view/login_url">
+        <table bgcolor="#DDDDDD" width="100%">
+           <tr><th>Login</th><td><input name="login"></td></tr>
+           <tr><th>Password</th><td><input type="password" name="password"></td></tr>
+           <tr><td></td><td><input type="submit" value="enter"></td></tr>
+        </table>
+    </form>
+    </td>
+    </tal:comment>
+    <td valign="top" align="center">
+        <h1 class="error">This site is just a demo. It is not in production.</h1>
+        <h1 class="error">All data, including user accounts, will be discarded
+            frequently, with no prior warning.</h1>
+        <h1 class="error">If your login doesn't work,
+        just create a new account.</h1>
+        <h1>Thanks for the visit!</h1>
+        
+    </td></tr>
+  </table>
+  
+  </div>	
+</body>
+</html>

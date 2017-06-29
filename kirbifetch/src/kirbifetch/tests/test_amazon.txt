@@ -1,0 +1,12 @@
+    from amazon_config import ACCESS_KEY_ID, ASSOCIATE_TAG
+    ecs = AmazonECS(ACCESS_KEY_ID, ASSOCIATE_TAG)
+
+    #print ecs.itemSearch('author:lewis carroll and title:logic')
+    #print ecs.itemSearch('isbn:'+sys.argv[1])
+    #s = xmlrpclib.Server('http://localhost:8080')
+    #l = s.list_pending_isbns()
+    l = ['0333647289']
+    #l = ['9780333647288']
+    ecs.isbnSearch(l)
+    pprint(ecs.parse())
+    #pprint(r)

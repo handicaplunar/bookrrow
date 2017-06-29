@@ -1,0 +1,9 @@
+ASSOCIATE_TAG = 'circulante-20'
+ACCESS_KEY_ID = '13W2MMDG65QJJK9GG402'
+
+#UK
+#ASSOCIATE_TAG = 'circulante-21'
+#DE
+#ASSOCIATE_TAG = 'circulante0f-21'
+#FR
+#ASSOCIATE_TAG = 'circulante07-21'

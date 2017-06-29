@@ -1,0 +1,45 @@
+'<?xml version="1.0" encoding="UTF-8"?>
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2005-10-05">
+    <OperationRequest>
+        <HTTPHeaders>
+        <Header Name="UserAgent" Value="Python-httplib2/$Rev: 235 $">
+        </Header>
+        </HTTPHeaders>
+        <RequestId>1753N5KPEHGVE0NDTK5B</RequestId>
+        <Arguments>
+        <Argument Name="SearchIndex" Value="Books">
+        </Argument>
+        <Argument Name="AssociateTag" Value="circulante-20">
+        </Argument>
+        <Argument Name="Service" Value="AWSECommerceService">
+        </Argument>
+        <Argument Name="ResponseGroup" Value="ItemAttributes">
+        </Argument>
+        <Argument Name="Operation" Value="ItemSearch">
+        </Argument>
+        <Argument Name="Power" Value="isbn:xxxx">
+        </Argument>
+        <Argument Name="AWSAccessKeyId" Value="13W2MMDG65QJJK9GG402">
+        </Argument>
+        </Arguments>
+        <RequestProcessingTime>0.0375111103057861</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+        <IsValid>True</IsValid>
+        <ItemSearchRequest>
+            <Power>isbn:xxxx</Power>
+            <ResponseGroup>ItemAttributes</ResponseGroup>
+            <SearchIndex>Books</SearchIndex>
+        </ItemSearchRequest>
+        <Errors>
+            <Error>
+                <Code>AWS.ECommerceService.NoExactMatches</Code>
+                <Message>We did not find any matches for your request.</Message>
+            </Error>
+        </Errors>
+        </Request>
+        <TotalResults>0</TotalResults>
+        <TotalPages>0</TotalPages>
+    </Items>
+</ItemSearchResponse>'

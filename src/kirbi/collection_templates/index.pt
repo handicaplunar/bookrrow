@@ -1,0 +1,65 @@
+<html metal:use-macro="context/@@master/macros/page">
+<head>
+
+</head>
+<body>
+  <span metal:fill-slot="content_title">
+    <span tal:replace="view/context/title" />'s collection
+  </span>
+  <span metal:fill-slot="content_actions">
+    <form class="search" action=".">
+        <input type="text" name="query">
+        <input type="submit" name="submit" value="search my collection">
+    </form>
+  </span>
+  <div metal:fill-slot="content">
+
+    <table><tr>
+    <td>
+        <h3 tal:content="view/results_title">999 items matched the query</h3>
+        <table tal:condition="view/results">
+            <tr tal:repeat="item view/results">
+                <th align="right" tal:content="repeat/item/number" />
+                <td align="center">
+                    <img class="cover"
+                         tal:attributes="src python:view.coverUrl(item)"
+                         height="53" />
+                </td>
+                <td>
+                    <dl>
+                        <dt><a tal:attributes="href python:view.url(item)"
+                            tal:content="item/filing_title">title goes here</a>
+                        </dt>
+                        <dd tal:content="item/creatorsLine">
+                        </dd>
+                    </dl>
+                </td>
+            </tr>
+        </table>
+    <td valign="top"><div class="leases">
+        <h2>Leases</h2>
+        <h3>Your requests</h3>
+            <ul tal:condition="view/yourRequests">
+                <li tal:repeat="req view/yourRequests">
+                    <b>Borrow from:</b> <span tal:replace="req/lender_login" />
+                       (<span tal:replace="req/status" />)<br />
+                    <i tal:content="req/item_title" /><br />
+                </li>
+            </ul>
+            <span tal:condition="not:view/yourRequests">none</span>
+        <h3>Other's requests</h3>
+            <ul tal:condition="view/othersRequests">
+                <li tal:repeat="req view/othersRequests">
+                    <b>Lend to:</b> <span tal:replace="req/borrower_login" />
+                       (<span tal:replace="req/status" />)<br />
+                    <i tal:content="req/item_title" /><br />
+                </li>
+            </ul>
+            <span tal:condition="not:view/othersRequests">none</span>
+        </div>
+    </td>
+    </tr></table>
+
+  </div>
+</body>
+</html>
